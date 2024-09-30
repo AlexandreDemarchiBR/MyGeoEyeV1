@@ -15,6 +15,8 @@ class Datanode:
     def __init__(self, host, port) -> None:
         self.listen_addr = (host,port)
         self.lock = threading.Lock()
+        if not os.path.exists('datanode_dir/'):
+            os.makedirs('datanode_dir/')
     
     # main server loop
     def start(self):

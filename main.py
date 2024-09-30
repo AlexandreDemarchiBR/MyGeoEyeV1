@@ -21,6 +21,8 @@ class Main:
             for line in workers:
                 line = line.split()
                 self.workers.append((line[0], int(line[1])))
+        if not os.path.exists('main_dir/'):
+            os.makedirs('main_dir/')
 
     
     # main server loop

@@ -1,6 +1,5 @@
 import socket
 import os
-import threading
 import hashlib
 
 MAIN_ADDR = 'localhost'
@@ -12,6 +11,8 @@ MAX_CHUNK_SIZE_BYTES = 1024 * 4
 class Client:
     def __init__(self, host: str, port: int) -> None:
         self.srv_addr = (host, port)
+        if not os.path.exists('client_dir/'):
+            os.makedirs('client_dir/')
 
     def upload_image(self, file_path: str) -> None:
         file_size = os.path.getsize(file_path)
