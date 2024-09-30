@@ -117,7 +117,7 @@ def calculate_md5(file_path):
 
 if __name__ == '__main__':
     c = Client(MAIN_ADDR, MAIN_PORT)
-    print(f'md5 of random_garbage BEFORE:\n{calculate_md5('client_dir/random_garbage')}')
+    print(f"md5 of random_garbage BEFORE:\n{calculate_md5('client_dir/random_garbage')}")
 
     input('...')
     print('\nuploading')
@@ -134,7 +134,7 @@ if __name__ == '__main__':
     input('...')
     print('\ndownloading')
     c.download_image('random_garbage')
-    print(f'md5 of random_garbage AFTER:\n{calculate_md5('client_dir/random_garbage')}')
+    print(f"md5 of random_garbage AFTER:\n{calculate_md5('client_dir/random_garbage')}")
 
     input('...')
     print('deleting remote copy')

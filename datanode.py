@@ -70,7 +70,7 @@ class Datanode:
                 chunk = self.recvall(conn, min(MAX_CHUNK_SIZE_BYTES, file_size - bytes_saved))
                 chunk_size = f.write(chunk)
                 bytes_saved += chunk_size
-        print(f'md5 of {file_name}:\n{calculate_md5(file_path)}')
+        print(f"md5 of {file_name}:\n{calculate_md5(file_path)}")
         print(f'upload for {file_name} from {addr} done')
 
     def send_image(self, conn: socket.socket, addr: tuple[str, int], file_name: str):
